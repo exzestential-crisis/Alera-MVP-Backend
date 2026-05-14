@@ -1,0 +1,16 @@
+services:
+  db:
+    image: docker.io/library/postgres:16
+    container_name: alera_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: alera_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: TSA5ZNZG
+    ports:
+      - "5432:5432"
+    volumes:
+      - alera_pgdata:/var/lib/postgresql/data
+
+volumes:
+  alera_pgdata:
